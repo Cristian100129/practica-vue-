@@ -2,7 +2,9 @@
     <div class="container">
         <header class="header">
         <div class="header-img">
-            <img src="../assets/vue.svg" alt="Vue">
+            <router-link to="/">
+                <img src="../assets/vue.svg" alt="Vue">
+            </router-link>
         </div>
         <nav class="header-items">
             <ul class="items-list">
@@ -19,9 +21,9 @@
 </template>
 <style scoped lang="scss" >
 .container{
-    background-color: #ccc;
     width: 100%;
-    height: 100vh;
+    height: auto;
+    background-color: #ccc;
     .header{
         display: flex;
         flex-flow: row wrap;
@@ -49,13 +51,15 @@
     .items-list a{
         text-decoration: none;
         color: white;
-        transition: all 300ms ;
+        transition: all 300ms;
     }
+
 
     .items-list a:hover{
         background-color: rgba(2,54,0,1);
         border-radius: 5px;
-        transform: scale(1.2);
+        transform: scale(1.1);
+        padding: 3px;
     }
 }
 </style>

@@ -1,5 +1,6 @@
-import { createRouter, createMemoryHistory} from 'vue-router';
+import { createRouter, createWebHashHistory} from 'vue-router';
 import Micomponente from '../components/Micomponente.vue';
+
 
 const routes = [
     { path: '/', component: Micomponente },
@@ -7,11 +8,13 @@ const routes = [
     { path: '/blogs', component: () => import("../components/Blogs.vue") },
     { path: '/juegos', component: () => import("../components/Juegos.vue") }, 
     { path: '/personas', component: () => import("../components/Personas.vue") },
-    { path: '/peliculas', component: () => import("../components/Peliculas.vue") }
-];
+    { path: '/peliculas', component: () => import("../components/Peliculas.vue") },
+    { path: '/:catchAll(.*)', component: () => import("../components/Error.vue")}
+
+]; 
 
 const router = createRouter({
-    history: createMemoryHistory(),
+    history: createWebHashHistory(),
     routes
 });
 
